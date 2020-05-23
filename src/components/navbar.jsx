@@ -1,33 +1,33 @@
-import React, { useEffect, useRef, useState } from "react"
-import PropTypes from "prop-types"
-import { IoMdClose } from "react-icons/io"
-import { FiMenu } from "react-icons/fi"
+import React, { useEffect, useRef, useState } from "react";
+import PropTypes from "prop-types";
+import { IoMdClose } from "react-icons/io";
+import { FiMenu } from "react-icons/fi";
 
-import CustomLink from "./customLink"
+import CustomLink from "./customLink";
 
 const Navbar = ({ routes, path }) => {
-  const pathname = path
-  const [isOpen, setIsOpen] = useState(false)
-  const [navBackground, setNavBackground] = useState(false)
+  const pathname = path;
+  const [isOpen, setIsOpen] = useState(false);
+  const [navBackground, setNavBackground] = useState(false);
 
-  const navRef = useRef()
-  navRef.current = navBackground
+  const navRef = useRef();
+  navRef.current = navBackground;
   useEffect(() => {
     const handleScroll = () => {
-      const show = window.scrollY > 30
+      const show = window.scrollY > 30;
       if (navRef.current !== show) {
-        setNavBackground(show)
+        setNavBackground(show);
       }
-    }
-    document.addEventListener("scroll", handleScroll)
+    };
+    document.addEventListener("scroll", handleScroll);
     return () => {
-      document.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleClose = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -41,17 +41,13 @@ const Navbar = ({ routes, path }) => {
             <img
               src="/logo.svg"
               alt="Logo"
-              className={`${
-                navBackground ? "w-16" : "w-24"
-              } mr-10  transition-all duration-200`}
+              className={`${navBackground ? "w-16" : "w-24"} mr-10  transition-all duration-200`}
             />
           </CustomLink>
           {routes.map(({ path, name }) => (
             <CustomLink
               key={name}
-              className={`py-2 mr-6 font-semibold block ${
-                navBackground && "text-gray-75"
-              }`}
+              className={`py-2 mr-6 font-semibold block ${navBackground && "text-gray-75"}`}
               href={path}
             >
               <>
@@ -76,17 +72,11 @@ const Navbar = ({ routes, path }) => {
             <img
               src={`${!navBackground ? "/logo.svg" : "/logo-white.svg"}`}
               alt="Logo"
-              className={`${
-                navBackground ? "w-16" : "w-24"
-              } transition-all duration-200`}
+              className={`${navBackground ? "w-16" : "w-24"} transition-all duration-200`}
             />
           </CustomLink>
           <button onClick={() => setIsOpen(true)}>
-            <FiMenu
-              className={`text-2xl my-auto ${
-                navBackground ? "text-white" : "text-gray-100"
-              }`}
-            />
+            <FiMenu className={`text-2xl my-auto ${navBackground ? "text-white" : "text-gray-100"}`} />
           </button>
         </div>
       </div>
@@ -101,12 +91,7 @@ const Navbar = ({ routes, path }) => {
       >
         <div className="flex px-4 justify-between">
           <CustomLink href="/">
-            <img
-              src={`/logo-white.svg`}
-              alt="Logo"
-              className="w-16"
-              onClick={handleClose}
-            />
+            <img src={`/logo-white.svg`} alt="Logo" className="w-16" onClick={handleClose} />
           </CustomLink>
           <button onClick={handleClose}>
             <IoMdClose className="text-white text-2xl my-auto" />
@@ -115,11 +100,7 @@ const Navbar = ({ routes, path }) => {
         <hr className="my-6 text-white" />
         <span className="flex-1">
           {routes.map(({ path, name, icon }) => (
-            <CustomLink
-              key={name}
-              className={`py-2 mr-6 text-white font-semibold block p-2 hover mx-4`}
-              href={path}
-            >
+            <CustomLink key={name} className={`py-2 mr-6 text-white font-semibold block p-2 hover mx-4`} href={path}>
               <>
                 {icon}
                 {name}
@@ -133,23 +114,21 @@ const Navbar = ({ routes, path }) => {
         </span>
 
         <div className="col-span-6 text-center mt-6">
-          <p className="text-gray-25 text-sm">
-            &copy; Copyright 2020. birc.com
-          </p>
+          <p className="text-gray-25 text-sm">&copy; Copyright 2020. birc.com</p>
         </div>
       </nav>
     </>
-  )
-}
+  );
+};
 
 Navbar.getInitialProps = async () => {
-  const { pathname } = useRouter()
+  const { pathname } = useRouter();
 
-  return { pathname }
-}
+  return { pathname };
+};
 
 Navbar.propTypes = {
   pathname: PropTypes.string,
   routes: PropTypes.array.isRequired,
-}
-export default Navbar
+};
+export default Navbar;

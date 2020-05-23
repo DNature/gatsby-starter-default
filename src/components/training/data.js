@@ -47,4 +47,4 @@ export default {
       participants: [`Top, Middle and Low Management`],
     },
   },
-}
+};

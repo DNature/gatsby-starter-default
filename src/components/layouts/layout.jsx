@@ -1,9 +1,9 @@
-import * as React from "react"
-import PropTypes from "prop-types"
-import { FiFeather, FiBookOpen, FiMonitor, FiMail } from "react-icons/fi"
+import * as React from "react";
+import PropTypes from "prop-types";
+import { FiFeather, FiBookOpen, FiMonitor, FiMail } from "react-icons/fi";
 
-import Navbar from "../navbar"
-import Footer from "../footer"
+import Navbar from "../navbar";
+import Footer from "../footer";
 
 const routes = [
   {
@@ -26,10 +26,10 @@ const routes = [
     path: "/contact",
     icon: <FiMail className="mr-2 inline-block text-xl text-white" />,
   },
-]
+];
 
 const MainLayout = ({ children, ...props }) => {
-  const pathname = props.path
+  const pathname = props.path;
   return (
     <div className="flex flex-col h-full" style={{ height: "100vh" }}>
       <Navbar pathname={pathname} routes={routes} />
@@ -37,10 +37,10 @@ const MainLayout = ({ children, ...props }) => {
 
       <Footer pathname={pathname} routes={routes} />
     </div>
-  )
-}
+  );
+};
 
 MainLayout.propTypes = {
   children: PropTypes.node.isRequired,
-}
-export default MainLayout
+};
+export default MainLayout;

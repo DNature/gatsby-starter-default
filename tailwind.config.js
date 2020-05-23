@@ -4,31 +4,27 @@ module.exports = {
     extend: {
       colors: {
         transparent: `transparent`,
-        bg: `var(--bg)`,
-        white: `var(--white)`,
-        text: `var(--text)`,
+        white: `#fff`,
         black: `#000`,
-        p: {
-          100: `var(--primary0)`,
-          75: `var(--primary1)`,
-          50: `var(--primary2)`,
-          25: `var(--primary3)`,
+        primary: {
+          100: `#0763CE`,
+          75: `#3E83D3`,
+          50: `#75A3D9`,
+          25: `#AEC5DF`,
         },
-        a: {
-          100: `var(--accent0)`,
-          75: `var(--accent1)`,
-          50: `var(--accent2)`,
-          25: `var(--accent3)`,
+        accent: {
+          100: `#26D9D9`,
+          75: `#60DDDD`,
+          50: `#85DEDE`,
+          25: `#B5E2E2`,
         },
-        g: {
-          100: `var(--gray0)`,
-          75: `var(--gray1)`,
-          50: `var(--gray2)`,
-          25: `var(--gray3)`,
-          15: `var(--gray4)`,
-        },
-        overlay: {
-          default: `var(--transparent)`,
+        gray: {
+          100: `#1D2734`,
+          75: `#4F5660`,
+          50: `#80858C`,
+          25: `#C7C9CB`,
+          15: `#f4f4f4`,
+          10: `#fafafa`,
         },
       },
       translate: {
@@ -39,47 +35,34 @@ module.exports = {
         "5/7": `71.4285714%`,
         "6/7": `85.7142857%`,
       },
-      boxShadow: {
-        "default": `var(--shadow)`,
-        "primary": `var(--shadow-primary)`,
-        "gradient": `var(--gradient)`,
-        "gradient-alt": `var(--gradient-inverse)`,
-      },
-      height: {
-        68: `18rem`,
-        70: `20rem`,
-        72: `22rem`,
-      },
-      borderRadius: {
-        none: `0`,
-        sm: `0.4375rem`,
-        default: `0.625rem`,
-        md: `1.875rem`,
-        lg: `2.5rem`,
-        full: `9999rem`,
-      },
-      container: {
-        center: true,
-      },
-      fontSize: {
-        "xs": `12px`,
-        "sm": `14px`,
-        "base": `16px`,
-        "md": `18px`,
-        "lg": `22px`,
-        "xl": `24px`,
-        "2xl": `36px`,
-        "3xl": `48px`,
-        "4xl": `52px`,
-        "5xl": `72px`,
-      },
+    },
+    borderRadius: {
+      none: `0`,
+      sm: `0.4375rem`,
+      default: `0.625rem`,
+      md: `1.875rem`,
+      lg: `2.5rem`,
+      full: `9999rem`,
+    },
+    container: {
+      center: true,
+    },
+    fontSize: {
+      "xs": `12px`,
+      "sm": `14px`,
+      "base": `16px`,
+      "md": `18px`,
+      "lg": `22px`,
+      "xl": `24px`,
+      "2xl": `36px`,
+      "3xl": `48px`,
+      "4xl": `52px`,
+      "5xl": `72px`,
     },
   },
-  corePlugins: {
-    // boxShadow: false,
-  },
+  corePlugins: {},
   variants: {
     width: [`responsive`, `hover`],
   },
   plugins: [],
-}
+};

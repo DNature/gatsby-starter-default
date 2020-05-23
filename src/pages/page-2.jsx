@@ -1,12 +1,13 @@
 // Gatsby supports TypeScript natively!
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
+import PropTypes from "prop-types";
 
-import Layout from "../components/layouts/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layouts/layout";
+import SEO from "../components/seo";
 
 const SecondPage = props => {
-  console.log(props)
+  console.log(props);
   return (
     <Layout>
       <SEO title="Page two" />
@@ -16,6 +17,10 @@ const SecondPage = props => {
         Go back to the homepage
       </Link>
     </Layout>
-  )
-}
-export default SecondPage
+  );
+};
+
+SecondPage.propTypes = {
+  path: PropTypes.string,
+};
+export default SecondPage;
