@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "birc.com",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
@@ -23,6 +23,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
+    "react-icons": "^3.10.0",
     "tailwindcss": "^1.4.6"
   },
   "devDependencies": {
@@ -32,6 +33,7 @@
     "eslint": "^7.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.20.0",
     "gatsby-plugin-purgecss": "^5.0.0",
     "prettier": "2.0.5"
   },

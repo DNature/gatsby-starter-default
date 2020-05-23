@@ -18,7 +18,7 @@
 
 module.exports = () => ({
   plugins: [
-    require("tailwindcss"),
+    require(`tailwindcss`),
     process.env.NODE_ENV === `production` ? require(`autoprefixer`) : undefined,
     process.env.NODE_ENV === `production` ? require(`cssnano`) : undefined,
   ],

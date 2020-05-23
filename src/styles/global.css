@@ -3,3 +3,199 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.container {
+  @apply px-4;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.btn:hover > span,
+a:hover > span {
+  padding-left: 10px;
+}
+
+button,
+button:focus {
+  outline: none !important;
+}
+
+.gradient {
+  background: linear-gradient(136.73deg, #6faade -9.68%, #0f5898 83.88%);
+}
+
+.brush::after {
+  z-index: -1;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  pointer-events: none;
+  bottom: -35px;
+  background-repeat: repeat-x;
+  background-position: 172px 0;
+  transition: linear 1s ease-in;
+  filter: brightness(100);
+  background-image: url(/images/brush-yellow.png);
+}
+
+.after::after {
+  z-index: 1;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  pointer-events: none;
+  bottom: -35px;
+  background-repeat: repeat-x;
+  filter: brightness(100);
+  background-position: 172px 0;
+  transition: linear 1s ease-in;
+  background-image: url(/images/brush-yellow.png);
+}
+
+.before::before {
+  z-index: 1;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  pointer-events: none;
+  top: -35px;
+  background-repeat: repeat-x;
+  filter: brightness(100);
+  background-position: 172px 0;
+  background-image: url(/images/brush-yellow.png);
+}
+
+.gray::before,
+.gray::after {
+  filter: grayscale(1) brightness(90%);
+}
+
+.-z-10 {
+  z-index: -10;
+}
+
+.-z-5 {
+  z-index: -5;
+}
+
+.progress {
+  transition: 1s ease-in-out;
+}
+
+ul li {
+  list-style: disc;
+  line-height: 2;
+}
+
+.item-active::before {
+  content: "";
+  height: 40px;
+  width: 40px;
+  background: #fff;
+  position: absolute;
+  top: -40px;
+  left: 0;
+  z-index: 0;
+}
+.item-active::after {
+  content: "";
+  height: 40px;
+  width: 40px;
+  background: #fff;
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  z-index: 0;
+}
+
+.wrapper::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 50px;
+  height: 40px;
+  background: #0763ce;
+  border-radius: 0 0 0 9999px;
+  z-index: 1;
+}
+
+.wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 50px;
+  height: 40px;
+  background: #0763ce;
+  border-radius: 9999px 0 0 0;
+  z-index: 1;
+}
+
+.slider-1 {
+  background-color: #00070f98;
+}
+
+.slider-1::before {
+  content: "";
+  background: url(https://images.unsplash.com/photo-1575351881847-b3bf188d9d0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80)
+    no-repeat center center/cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+  animation: 20s forwards slide infinite ease-out;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0.5;
+    background: url(https://images.unsplash.com/photo-1575351881847-b3bf188d9d0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80)
+      no-repeat center center/cover;
+    background-attachment: fixed;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  35% {
+    opacity: 0.5;
+    background: url(https://images.unsplash.com/photo-1550817019-afc5682608e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=657&q=80)
+      no-repeat center center/cover;
+    background-attachment: fixed;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  65% {
+    opacity: 0.5;
+    background: url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)
+      no-repeat center center/cover;
+    background-attachment: fixed;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.5;
+    background: url(https://images.unsplash.com/photo-1565881958424-70a39aea3dd9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=645&q=80)
+      no-repeat center center/cover;
+    background-attachment: fixed;
+  }
+}
