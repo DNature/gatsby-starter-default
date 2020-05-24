@@ -12,20 +12,33 @@ const Image = ({ style, alt, src, className }) => {
             relativePath
             name
             childImageSharp {
-              fluid(maxWidth: 600) {
+              fluid(maxWidth: 800) {
                 ...GatsbyImageSharpFluid
               }
             }
+            extension
+            publicURL
           }
         }
       }
     }
   `);
 
-  const image = data.images.edges.find(img => img.node.relativePath.includes(src));
+  if (!data) return <img src={src} alt={alt} style={style} className={className} />;
+  const image = data.images.edges.find(img => img.node.relativePath.includes(src) && img.node.extension != `svg`);
+
   if (!image) return null;
 
-  return <Img fluid={image.node.childImageSharp.fluid} alt={alt} style={style} className={className} />;
+  return (
+    <Img
+      objectFit="cover"
+      objectPosition="50% 50%"
+      fluid={image.node.childImageSharp.fluid}
+      alt={alt}
+      style={style}
+      className={className}
+    />
+  );
 };
 
 Image.propTypes = {

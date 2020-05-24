@@ -2,20 +2,36 @@ import React from "react";
 
 import MainLayout from "../components/layouts/layout";
 import Image from "../components/image";
+import mac from "../images/mac.jpg";
+
+// font
+import "typeface-montserrat";
 // import SEO from "../components/seo";
 
 const IndexPage = () => (
   <MainLayout>
-    <div className="relative">
+    <div className="relative overflow-hidden" style={{ height: `100vh` }}>
+      <div className="col-span-1 slider h-full overflow-hidden">
+        <div className="s1 fixed top-0 left-0 h-full w-full slide"></div>
+        <div className="s2 fixed top-0 left-0 h-full w-full slide"></div>
+        <div className="s3 fixed top-0 left-0 h-full w-full slide"></div>
+        <div className="s4 fixed top-0 left-0 h-full w-full slide"></div>
+        <div className="s5 fixed top-0 left-0 h-full w-full slide"></div>
+        <div className="s6 fixed top-0 left-0 h-full w-full slide"></div>
+        <div className="flex h-full items-center max-w-4xl" style={{ zIndex: 1 }}>
+          <div className="hero-title py-6 md:px-20 px-10 ">
+            <h1 className="text-2xl lg:text-3xl font-bold">Bussiness Innovation & Re-Engineering Company</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="relative  bg-white">
       <div className="container after before mx-auto">
         <div className="lg:grid grid-cols-7 gap-4 py-40">
           <div className="col-span-3 my-auto grid relative mr-12" style={{ placeContent: `center` }}>
-            <div className="w-full h-full  bg-gray-15 block absolute top-0 -mt-8 rounded" />
-            <Image
-              src="gatsby-astronaut.png"
-              alt="apple"
-              className="w-full hidden md:block lg:-ml-8 rounded shadow-xl z-10"
-            />
+            <div className="w-full h-full bg-gray-15 block absolute top-0 -mt-8 rounded" />
+            <img src={mac} alt="apple" className="w-full hidden md:block lg:-ml-8 rounded shadow-xl z-10" />
           </div>
           <div className="col-span-4 overflow-hidden my-auto">
             <h3 className="text-2xl font-bold">Your Best Value Proposition</h3>
@@ -42,11 +58,7 @@ const IndexPage = () => (
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           <div className="rounded-md bg-white hover:shadow-xl overflow-hidden border-2 hover:border-primary-75 border-transparent">
-            <img
-              src="https://images.unsplash.com/photo-1467664631004-58beab1ece0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-              alt=""
-              className="w-full hidden lg:block"
-            />
+            <Image src="cofee.jpeg" alt="" className="w-full hidden lg:block" />
 
             <div className="p-5">
               <h3 className="lg:text-xl font-bold text-primary-100 my-3">Learning</h3>
@@ -119,11 +131,10 @@ const IndexPage = () => (
       <div
         className="absolute top-0 left-0 bottom-0 right-0"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundAttachment: "fixed",
+          backgroundImage: `url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')`,
+          backgroundPosition: `center`,
+          backgroundSize: `cover`,
+          backgroundAttachment: `fixed`,
           zIndex: 1,
         }}
       />
@@ -233,7 +244,7 @@ const IndexPage = () => (
       </div>
     </div>
 
-    <div className="relative">
+    <div className="relative bg-white">
       <div className="container mx-auto py-40 before after">
         <div className="mb-20">
           <h2 className="text-2xl font-bold text-gray-100 text-center">What our clients says about us</h2>
@@ -249,7 +260,7 @@ const IndexPage = () => (
           </div>
         </div>
         <div className="md:flex bg-white rounded-lg p-6 justify-center content-center">
-          <img className="h-16 w-16  rounded-full mx-auto md:mx-0 md:mr-6" src="/images/avatar.png" />
+          <Image className="h-16 w-16  rounded-full mx-auto md:mx-0 md:mr-6" src="avatar.png" />
           <div className="text-center md:text-left my-auto">
             <h2 className="text-lg">Divine Hycenth</h2>
             <div className="text-primary-50">Developer @ Dreamworks Limited</div>

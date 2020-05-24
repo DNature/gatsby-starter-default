@@ -1,7 +1,7 @@
 import React from "react";
 
-export default () => (
-  <footer className="bg-gray-25">
+const Footer = () => (
+  <footer className="bg-gray-25 z-10">
     <div className="container mx-auto py-20">
       <div className="">
         <h2 className="text-lg text-gray-100 text-center">BIRC &copy; 2020.</h2>
@@ -11,3 +11,5 @@ export default () => (
     </div>
   </footer>
 );
+
+export default Footer;

@@ -4,9 +4,9 @@ import { IoMdClose } from "react-icons/io";
 import { FiMenu } from "react-icons/fi";
 
 import CustomLink from "./customLink";
+import logo from '../images/logo.svg'
 
-const Navbar = ({ routes, path }) => {
-  const pathname = path;
+const Navbar = ({ routes, pathname }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [navBackground, setNavBackground] = useState(false);
 
@@ -39,7 +39,7 @@ const Navbar = ({ routes, path }) => {
         <nav className="flex content-center ">
           <CustomLink href="/" className="my-auto">
             <img
-              src="/logo.svg"
+              src={logo}
               alt="Logo"
               className={`${navBackground ? "w-16" : "w-24"} mr-10  transition-all duration-200`}
             />
@@ -53,7 +53,7 @@ const Navbar = ({ routes, path }) => {
               <>
                 {name}
 
-                {pathname?.split("/")[1] == path.split("/")[1] && (
+                {pathname.split("/")[1] == path.split("/")[1] && (
                   <span className="block mt-3 w-5 h-1 mx-auto text-center bg-primary-100 rounded"></span>
                 )}
               </>
@@ -121,14 +121,8 @@ const Navbar = ({ routes, path }) => {
   );
 };
 
-Navbar.getInitialProps = async () => {
-  const { pathname } = useRouter();
-
-  return { pathname };
-};
-
 Navbar.propTypes = {
-  pathname: PropTypes.string,
+  path: PropTypes.object,
   routes: PropTypes.array.isRequired,
 };
 export default Navbar;

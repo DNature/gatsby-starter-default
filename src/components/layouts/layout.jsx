@@ -7,33 +7,34 @@ import Footer from "../footer";
 
 const routes = [
   {
-    name: "About",
-    path: "/about",
+    name: `About`,
+    path: `/about`,
     icon: <FiBookOpen className="mr-2 inline-block text-xl text-white" />,
   },
   {
-    name: "Training",
-    path: "/training",
+    name: `Training`,
+    path: `/training`,
     icon: <FiFeather className="mr-2 inline-block text-xl text-white" />,
   },
   {
-    name: "Works",
-    path: "/works",
+    name: `Team`,
+    path: `/team`,
     icon: <FiMonitor className="mr-2 inline-block text-xl text-white" />,
   },
   {
-    name: "Contact",
-    path: "/contact",
+    name: `Contact`,
+    path: `/contact`,
     icon: <FiMail className="mr-2 inline-block text-xl text-white" />,
   },
 ];
 
-const MainLayout = ({ children, ...props }) => {
-  const pathname = props.path;
+const MainLayout = ({ children }) => {
+  const pathname = window.location.pathname;
+  console.log(pathname);
   return (
-    <div className="flex flex-col h-full" style={{ height: "100vh" }}>
+    <div className="flex flex-col h-full" style={{ height: `100vh` }}>
       <Navbar pathname={pathname} routes={routes} />
-      <div className="flex-1 z-10">{children}</div>
+      <div className="flex-1 z-10 bg-white">{children}</div>
 
       <Footer pathname={pathname} routes={routes} />
     </div>
@@ -42,5 +43,6 @@ const MainLayout = ({ children, ...props }) => {
 
 MainLayout.propTypes = {
   children: PropTypes.node.isRequired,
+  pathname: PropTypes.string,
 };
 export default MainLayout;
